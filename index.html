@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Saloon | Premium Grooming Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-white text-[#2c2c2c] pb-24 md:pb-0">
+
+    <!-- Header -->
+    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Menu Button - Left (Mobile) -->
+                <button onclick="toggleMobileMenu(true)"
+                    class="md:hidden p-2 text-gray-600 hover:text-[#ff6b35] transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer">
+                    <span class="text-xl md:text-2xl font-bold text-[#ff6b35]">Style Saloon</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-semibold transition-colors">Home</a>
+                    <a href="services.html" class="text-sm font-semibold transition-colors">Services</a>
+                    <a href="pricing.html" class="text-sm font-semibold transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-sm font-semibold transition-colors">Contact</a>
+                </nav>
+
+                <!-- Desktop Actions -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="tel:+919876543210"
+                        class="flex items-center space-x-2 text-[#ff6b35] hover:text-[#e85a2a] font-medium">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                        <span>+91 98765 43210</span>
+                    </a>
+
+                    <!-- Cart Button -->
+                    <button onclick="toggleCart(true)"
+                        class="relative p-2 text-gray-600 hover:text-[#ff6b35] transition-colors">
+                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                        <span
+                            class="cart-badge absolute top-0 right-0 bg-[#ff6b35] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] flex items-center justify-center border-2 border-white hidden">0</span>
+                    </button>
+
+                    <div class="auth-container">
+                        <!-- Populated by app.js -->
+                    </div>
+
+                    <button onclick="window.location.href='services.html'"
+                        class="bg-[#ff6b35] text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-[#e85a2a] shadow-lg shadow-[#ff6b35]/20 transition-all">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Mobile Actions - Right -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <button onclick="toggleCart(true)"
+                        class="relative p-2 text-gray-600 hover:text-[#ff6b35] transition-colors">
+                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                        <span
+                            class="cart-badge absolute top-0 right-0 bg-[#ff6b35] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] flex items-center justify-center border-2 border-white hidden">0</span>
+                    </button>
+                    <div class="auth-container">
+                        <!-- Populated by app.js -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="menu-backdrop" class="fixed inset-0 bg-black/50 z-[100] backdrop-blur-sm hidden"
+        onclick="toggleMobileMenu(false)"></div>
+    <div id="mobile-menu"
+        class="fixed inset-y-0 left-0 w-80 bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-[101] flex flex-col">
+        <div class="p-6 bg-gradient-to-br from-[#fff5f0] to-white border-b border-gray-100">
+            <div class="flex items-center justify-between mb-8">
+                <span class="text-xl font-bold text-[#ff6b35]">Style Saloon</span>
+                <button onclick="toggleMobileMenu(false)"
+                    class="p-2 text-gray-400 hover:text-[#ff6b35] transition-colors bg-white rounded-full shadow-sm">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div id="mobile-profile-section">
+                <!-- Populated by app.js -->
+            </div>
+        </div>
+        <nav class="flex-1 overflow-y-auto py-6 px-4 space-y-2">
+            <a href="index.html"
+                class="flex items-center justify-between p-4 rounded-2xl transition-all hover:bg-gray-50 group">
+                <div class="flex items-center space-x-4">
+                    <i data-lucide="home" class="w-5 h-5 text-gray-400 group-hover:text-[#ff6b35]"></i>
+                    <span class="font-bold">Home</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-300"></i>
+            </a>
+            <a href="services.html"
+                class="flex items-center justify-between p-4 rounded-2xl transition-all hover:bg-gray-50 group">
+                <div class="flex items-center space-x-4">
+                    <i data-lucide="scissors" class="w-5 h-5 text-gray-400 group-hover:text-[#ff6b35]"></i>
+                    <span class="font-bold">Services</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-300"></i>
+            </a>
+            <a href="pricing.html"
+                class="flex items-center justify-between p-4 rounded-2xl transition-all hover:bg-gray-50 group">
+                <div class="flex items-center space-x-4">
+                    <i data-lucide="dollar-sign" class="w-5 h-5 text-gray-400 group-hover:text-[#ff6b35]"></i>
+                    <span class="font-bold">Pricing</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-300"></i>
+            </a>
+            <a href="contact.html"
+                class="flex items-center justify-between p-4 rounded-2xl transition-all hover:bg-gray-50 group">
+                <div class="flex items-center space-x-4">
+                    <i data-lucide="mail" class="w-5 h-5 text-gray-400 group-hover:text-[#ff6b35]"></i>
+                    <span class="font-bold">Contact</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-300"></i>
+            </a>
+        </nav>
+        <div class="p-6 border-t border-gray-100 bg-gray-50">
+            <button onclick="window.location.href='login.html'"
+                class="w-full flex items-center justify-center space-x-2 p-4 bg-[#ff6b35] text-white hover:bg-[#e85a2a] transition-colors rounded-2xl font-bold shadow-lg shadow-[#ff6b35]/20">
+                <i data-lucide="log-in" class="w-5 h-5"></i>
+                <span>Log In / Sign Up</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div id="cart-backdrop" class="fixed inset-0 bg-black/50 z-[100] backdrop-blur-sm hidden"
+        onclick="toggleCart(false)"></div>
+    <div id="cart-slider"
+        class="fixed inset-y-0 right-0 w-full max-w-md bg-white h-full shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out z-[101]">
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <i data-lucide="shopping-cart" class="w-6 h-6 text-[#ff6b35]"></i>
+                <h2 class="text-xl font-bold text-[#2c2c2c]">Your Cart</h2>
+            </div>
+            <button onclick="toggleCart(false)" class="p-2 hover:bg-gray-100 rounded-full">
+                <i data-lucide="x" class="w-6 h-6 text-gray-400"></i>
+            </button>
+        </div>
+        <div id="cart-items-list" class="flex-1 overflow-y-auto p-6">
+            <!-- Populated by app.js -->
+        </div>
+        <div class="p-6 border-t border-gray-100 space-y-4">
+            <div class="flex items-center justify-between text-lg">
+                <span class="font-medium text-gray-600">Subtotal</span>
+                <span id="cart-subtotal" class="font-bold text-[#2c2c2c]">₹0</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="clearCart()"
+                    class="border-2 border-gray-100 text-gray-600 py-3.5 rounded-2xl font-bold hover:bg-gray-50 transition-colors">Clear
+                    All</button>
+                <button onclick="window.location.href='services.html'"
+                    class="bg-[#ff6b35] text-white py-3.5 rounded-2xl font-bold hover:bg-[#e85a2a] shadow-lg shadow-[#ff6b35]/20 transition-all">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hybrid Mobile Bottom Navigation -->
+    <div
+        class="md:hidden fixed bottom-6 left-4 right-4 bg-white rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-40 px-2 py-3 border border-gray-100">
+        <div class="flex items-center justify-between relative w-full">
+            <div class="flex items-center justify-around w-[40%]">
+                <a href="index.html"
+                    class="bottom-nav-item flex items-center space-x-1.5 px-3 py-1.5 rounded-full transition-all text-gray-400">
+                    <i data-lucide="home" class="w-6 h-6"></i>
+                    <span class="bottom-nav-label text-[12px] font-bold hidden">Home</span>
+                </a>
+                <a href="services.html"
+                    class="bottom-nav-item flex items-center space-x-1.5 px-3 py-1.5 rounded-full transition-all text-gray-400">
+                    <i data-lucide="scissors" class="w-6 h-6"></i>
+                    <span class="bottom-nav-label text-[12px] font-bold hidden">Services</span>
+                </a>
+            </div>
+            <div class="absolute left-1/2 -top-10 transform -translate-x-1/2">
+                <button onclick="window.location.href='services.html'"
+                    class="w-16 h-16 bg-gradient-to-tr from-[#ff6b35] to-[#ff4e00] text-white rounded-full flex items-center justify-center shadow-[0_8px_20px_rgba(255,107,53,0.4)] border-4 border-white transform hover:scale-105 active:scale-95 transition-all">
+                    <i data-lucide="calendar" class="w-7 h-7"></i>
+                </button>
+            </div>
+            <div class="flex items-center justify-around w-[40%]">
+                <a href="contact.html"
+                    class="bottom-nav-item flex items-center space-x-1.5 px-3 py-1.5 rounded-full transition-all text-gray-400">
+                    <i data-lucide="message-square" class="w-6 h-6"></i>
+                    <span class="bottom-nav-label text-[12px] font-bold hidden">Contact</span>
+                </a>
+                <a href="profile.html"
+                    class="bottom-nav-item flex items-center space-x-1.5 px-3 py-1.5 rounded-full transition-all text-gray-400">
+                    <i data-lucide="user" class="w-6 h-6"></i>
+                    <span class="bottom-nav-label text-[12px] font-bold hidden">Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-[#fff5f0] via-white to-[#ffe5d9] py-20 md:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-10">
+                    <div>
+                        <span
+                            class="bg-[#ff6b35]/10 text-[#ff6b35] px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider">
+                            Premium Saloon Experience
+                        </span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold text-[#2c2c2c] leading-tight">
+                        Elevate Your Look,<br />
+                        <span class="text-[#ff6b35]">Embrace Your Style</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+                        Experience luxury grooming and beauty services from certified professionals using premium
+                        products in a modern environment.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-5">
+                        <button onclick="window.location.href='services.html'"
+                            class="bg-[#ff6b35] text-white px-10 py-5 rounded-2xl text-lg font-bold hover:bg-[#e85a2a] shadow-xl shadow-[#ff6b35]/30 transition-all transform hover:-translate-y-1">
+                            Book Appointment
+                        </button>
+                        <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})"
+                            class="bg-white text-[#2c2c2c] px-10 py-5 rounded-2xl text-lg font-bold border-2 border-gray-100 hover:border-[#ff6b35] hover:text-[#ff6b35] transition-all">
+                            Explore More
+                        </button>
+                    </div>
+                    <!-- Trust Indicators -->
+                    <div class="grid grid-cols-3 gap-4 pt-10 border-t-2 border-[#ff6b35]/10">
+                        <div
+                            class="bg-white/50 backdrop-blur-sm p-4 rounded-2xl border border-white flex flex-col items-center text-center shadow-sm">
+                            <i data-lucide="sparkles" class="w-8 h-8 text-[#ff6b35] mb-2"></i>
+                            <div class="font-bold text-[#2c2c2c]">5000+</div>
+                            <div class="text-[10px] uppercase font-bold text-gray-500">Clients</div>
+                        </div>
+                        <div
+                            class="bg-white/50 backdrop-blur-sm p-4 rounded-2xl border border-white flex flex-col items-center text-center shadow-sm">
+                            <i data-lucide="award" class="w-8 h-8 text-[#ff6b35] mb-2"></i>
+                            <div class="font-bold text-[#2c2c2c]">Certified</div>
+                            <div class="text-[10px] uppercase font-bold text-gray-500">Experts</div>
+                        </div>
+                        <div
+                            class="bg-white/50 backdrop-blur-sm p-4 rounded-2xl border border-white flex flex-col items-center text-center shadow-sm">
+                            <i data-lucide="clock" class="w-8 h-8 text-[#ff6b35] mb-2"></i>
+                            <div class="font-bold text-[#2c2c2c]">10+ Years</div>
+                            <div class="text-[10px] uppercase font-bold text-gray-500">Experience</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex justify-center items-center mt-12 md:mt-0">
+                    <div class="absolute inset-0 bg-[#ff6b35]/10 rounded-full blur-3xl transform scale-110"></div>
+                    <img src="assets/hero_vector.png" alt="Beauty Saloon"
+                        class="relative w-full max-w-xl md:max-w-2xl transform hover:rotate-2 transition-transform duration-700 drop-shadow-[0_20px_50px_rgba(255,107,53,0.3)]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-6xl font-bold text-[#2c2c2c] mb-6">Why Choose Style Saloon?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto font-medium">Experience the difference with our
+                    commitment to excellence, luxury, and personalized care.</p>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                <div
+                    class="bg-gray-50 p-6 md:p-10 rounded-3xl border-2 border-transparent hover:border-[#ff6b35]/20 hover:bg-white hover:shadow-2xl transition-all group">
+                    <div
+                        class="w-16 h-16 bg-[#ff6b35]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i data-lucide="award" class="w-8 h-8 text-[#ff6b35]"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-[#2c2c2c] mb-4">Certified Professionals</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">Highly trained beauty experts with years of
+                        international experience.</p>
+                </div>
+                <div
+                    class="bg-gray-50 p-6 md:p-10 rounded-3xl border-2 border-transparent hover:border-[#ff6b35]/20 hover:bg-white hover:shadow-2xl transition-all group">
+                    <div
+                        class="w-16 h-16 bg-[#ff6b35]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield" class="w-8 h-8 text-[#ff6b35]"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-[#2c2c2c] mb-4">Hygiene Standards</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">Sanitized tools and a clean environment
+                        following strict medical-grade protocols.</p>
+                </div>
+                <div
+                    class="bg-gray-50 p-6 md:p-10 rounded-3xl border-2 border-transparent hover:border-[#ff6b35]/20 hover:bg-white hover:shadow-2xl transition-all group">
+                    <div
+                        class="w-16 h-16 bg-[#ff6b35]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i data-lucide="star" class="w-8 h-8 text-[#ff6b35]"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-[#2c2c2c] mb-4">Premium Products</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">We use only top-tier, professional-grade
+                        products from trusted international brands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews & Gallery -->
+    <section id="gallery" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-6xl font-bold text-[#2c2c2c] mb-6">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Don't just take our word for it. Here's what our
+                    satisfied clients have to say.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sample Review -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 flex flex-col justify-between hover:shadow-2xl transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex space-x-1">
+                                <i data-lucide="star" class="w-5 h-5 fill-[#ff6b35] text-[#ff6b35]"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-[#ff6b35] text-[#ff6b35]"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-[#ff6b35] text-[#ff6b35]"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-[#ff6b35] text-[#ff6b35]"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-[#ff6b35] text-[#ff6b35]"></i>
+                            </div>
+                            <span class="text-sm text-gray-400 font-bold uppercase">April 2026</span>
+                        </div>
+                        <p class="text-gray-700 text-lg italic leading-relaxed mb-8">"Absolutely love the atmosphere and
+                            service! My stylist understood exactly what I wanted. Best salon experience ever!"</p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-100">
+                        <div class="font-bold text-xl text-[#2c2c2c]">Sarah Johnson</div>
+                        <div class="text-[#ff6b35] font-bold text-sm uppercase tracking-wider mt-1">Hair Styling</div>
+                    </div>
+                </div>
+                <!-- Repeat for other reviews as needed -->
+            </div>
+
+            <!-- Gallery -->
+            <div class="mt-32">
+                <h3 class="text-3xl font-bold text-[#2c2c2c] mb-12 text-center uppercase tracking-widest">Our Work
+                    Speaks for Itself</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                    <div
+                        class="aspect-square rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="aspect-square rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="aspect-square rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=600"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="aspect-square rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

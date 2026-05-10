@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back | Style Saloon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gradient-to-br from-[#fff5f0] to-white min-h-screen flex flex-col">
+
+    <!-- Simple Nav for Login -->
+    <header class="w-full bg-transparent p-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center">
+                <span class="text-xl md:text-2xl font-bold text-[#ff6b35]">Style Saloon</span>
+            </a>
+            <a href="index.html" class="text-gray-500 font-bold hover:text-[#ff6b35] transition-colors flex items-center space-x-2">
+                <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="flex-1 flex items-center justify-center p-6">
+        <div class="bg-white w-full max-w-lg rounded-[48px] shadow-[0_32px_64px_rgba(0,0,0,0.1)] p-10 md:p-16 border border-gray-50 relative overflow-hidden">
+            <!-- Decorative circles -->
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-[#ff6b35]/5 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-[#ff6b35]/5 rounded-full blur-3xl"></div>
+
+            <div class="text-center mb-12 relative z-10">
+                <div class="w-20 h-20 bg-[#fff5f0] rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-sm">
+                    <i data-lucide="lock" class="w-10 h-10 text-[#ff6b35]"></i>
+                </div>
+                <h1 class="text-4xl font-bold text-[#2c2c2c] mb-3">Welcome Back</h1>
+                <p class="text-gray-500 font-medium text-lg">Your personalized style journey continues here.</p>
+            </div>
+
+            <form id="login-form" class="space-y-8 relative z-10">
+                <div class="space-y-3">
+                    <label class="text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Email Address</label>
+                    <div class="relative">
+                        <i data-lucide="mail" class="absolute left-5 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                        <input type="email" id="email" required class="w-full pl-14 pr-6 py-5 rounded-[24px] bg-gray-50 border border-transparent focus:bg-white focus:border-[#ff6b35]/30 focus:ring-4 focus:ring-[#ff6b35]/5 focus:outline-none transition-all font-bold text-lg" placeholder="name@example.com">
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between px-1">
+                        <label class="text-xs font-bold uppercase tracking-widest text-gray-400">Password</label>
+                        <a href="#" class="text-xs font-bold text-[#ff6b35] hover:underline">Forgot?</a>
+                    </div>
+                    <div class="relative">
+                        <i data-lucide="key-round" class="absolute left-5 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                        <input type="password" id="password" required class="w-full pl-14 pr-6 py-5 rounded-[24px] bg-gray-50 border border-transparent focus:bg-white focus:border-[#ff6b35]/30 focus:ring-4 focus:ring-[#ff6b35]/5 focus:outline-none transition-all font-bold text-lg" placeholder="••••••••">
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-3 px-1">
+                    <input type="checkbox" id="remember" class="w-5 h-5 rounded-lg border-gray-200 text-[#ff6b35] focus:ring-[#ff6b35]">
+                    <label for="remember" class="text-sm font-bold text-gray-600 cursor-pointer">Remember me for 30 days</label>
+                </div>
+
+                <button type="submit" class="w-full bg-[#ff6b35] text-white py-6 rounded-[28px] font-bold text-xl hover:bg-[#e85a2a] shadow-2xl shadow-[#ff6b35]/30 transition-all transform hover:scale-[1.02] active:scale-[0.98]">
+                    Sign In
+                </button>
+            </form>
+
+            <div class="mt-12 text-center relative z-10">
+                <p class="text-gray-500 font-bold">Don't have an account? <a href="#" class="text-[#ff6b35] hover:underline">Join the Saloon</a></p>
+            </div>
+            
+            <div class="mt-10 pt-10 border-t border-gray-100 flex items-center justify-center space-x-6 relative z-10">
+                <button class="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center hover:bg-gray-100 transition-all border border-gray-50"><i data-lucide="chrome" class="w-6 h-6 text-gray-600"></i></button>
+                <button class="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center hover:bg-gray-100 transition-all border border-gray-50"><i data-lucide="github" class="w-6 h-6 text-gray-600"></i></button>
+                <button class="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center hover:bg-gray-100 transition-all border border-gray-50"><i data-lucide="apple" class="w-6 h-6 text-gray-600"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const name = email.split('@')[0];
+            const user = {
+                name: name.charAt(0).toUpperCase() + name.slice(1),
+                email: email,
+                gender: Math.random() > 0.5 ? 'Male' : 'Female'
+            };
+            updateAuth(user);
+            window.location.href = 'profile.html';
+        });
+    </script>
+</body>
+</html>
